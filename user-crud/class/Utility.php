@@ -3,10 +3,23 @@
 class Utility {
 
     // Redirect to a different page with an optional message and prefill data
+    public static function redirect($url, $msg = []) {
+        // You can extend this method later to handle flash messages and prefill data
+
+        header("Location: " . BASE_URL . $url);
+        exit();
+    }
 
     // Show flash message
 
     // Check user login status
+    public static function checkLogin($login=true) {
+        if ($login && !isset($_SESSION['user'])) {
+            self::redirect('login.php', "Please log in to access this page.");
+        } elseif (!$login && isset($_SESSION['user'])) {
+            self::redirect('index.php');
+        }
+    }
 
     // Display navigation menu
     public static function showNav($pages = NAV_PAGES)
@@ -21,6 +34,10 @@ class Utility {
     }
 
     // Logout user
+    public static function logout() {
+        unset($_SESSION['user']);
+        self::redirect('login.php');
+    }
 
     // Get prefill data for specified keys
 

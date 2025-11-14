@@ -4,8 +4,11 @@
 require_once 'inc/config.php';
 
 // check if user is logged in
+Utility::checkLogin();
 
 // load all members
+$user = new User();
+$members = $user->getAll();
 
 ?>
 <!DOCTYPE html>
@@ -38,6 +41,21 @@ require_once 'inc/config.php';
         </thead>
         <tbody>
         <!-- Show members data -->
+<?php
+if (empty($members)) {
+    echo '<tr><td colspan="6">Belum ada data user.</td></tr>';
+}
+foreach ($members as $member) {
+    echo '<tr>';
+    echo '<td>' . htmlspecialchars($member['id']) . '</td>';
+    echo '<td>' . htmlspecialchars($member['username']) . '</td>';
+    echo '<td>' . htmlspecialchars($member['fullname']) . '</td>';
+    echo '<td>' . htmlspecialchars($member['city']) . '</td>';
+    echo '<td>' . htmlspecialchars($member['created_at']) . '</td>';
+    echo '<td>&nbsp;</td>';
+    echo '</tr>';
+}
+?>
         </tbody>
       </table>
     </section>

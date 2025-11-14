@@ -4,6 +4,7 @@
 require_once 'inc/config.php';
 
 // check if user is logged in
+Utility::checkLogin();
 
 ?>
 <!DOCTYPE html>
@@ -25,12 +26,12 @@ require_once 'inc/config.php';
       <p>This is your dashboard where you can manage your content. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, numquam illum dolor quia sapiente blanditiis possimus magnam fugiat beatae rerum. Nemo quae quas minus velit soluta aperiam aspernatur hic incidunt.</p>
       <p>Your data:
         <ul>
-          <li>ID: </li>
-          <li>Username: </li>
-          <li>Name: </li>
-          <li>City: </li>
-          <li>Join Date: </li>
-          <li>Last Login: </li>
+          <li>ID: <?= $_SESSION['user']['id'] ?? '-' ?></li>
+          <li>Username: <?= $_SESSION['user']['username'] ?? '-' ?></li>
+          <li>Name: <?= $_SESSION['user']['fullname'] ?? '-' ?></li>
+          <li>City: <?= $_SESSION['user']['city'] ?? '-' ?></li>
+          <li>Join Date: <?= $_SESSION['user']['created_at'] ?? '-' ?></li>
+          <li>Last Login: <?= $_SESSION['user']['last_login'] ?? '-' ?></li>
         </ul>
       </p>
     </section>
