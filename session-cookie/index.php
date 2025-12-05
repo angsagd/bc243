@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+session_regenerate_id();
+
 $content = '';
 $uts = time();
 $status = 'Tuliskan isi cookie, kemudian tekan tombol simpan.';
