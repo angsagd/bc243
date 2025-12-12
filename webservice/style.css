@@ -147,3 +147,11 @@ tr:hover {
 .meal-title a:hover {
   color: #4CAF50;
 }
+.meal-letter {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.meal-letter a {
+  font-size: larger;
+}
