@@ -151,7 +151,7 @@ tr:hover {
   text-align: center;
   margin-bottom: 20px;
 }
-
 .meal-letter a {
   font-size: larger;
+  padding: 5px;
 }

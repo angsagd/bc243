@@ -35,32 +35,11 @@ if(isset($_GET['l'])) {
   <main>
     <section>
       <div class="meal-letter">
-        <a href="index.php?l=a">A</a>
-        <a href="index.php?l=b">B</a>
-        <a href="index.php?l=c">C</a>
-        <a href="index.php?l=d">D</a>
-        <a href="index.php?l=e">E</a>
-        <a href="index.php?l=f">F</a>
-        <a href="index.php?l=g">G</a>
-        <a href="index.php?l=h">H</a>
-        <a href="index.php?l=i">I</a>
-        <a href="index.php?l=j">J</a>
-        <a href="index.php?l=k">K</a>
-        <a href="index.php?l=l">L</a>
-        <a href="index.php?l=m">M</a>
-        <a href="index.php?l=n">N</a>
-        <a href="index.php?l=o">O</a>
-        <a href="index.php?l=p">P</a>
-        <a href="index.php?l=q">Q</a>
-        <a href="index.php?l=r">R</a>
-        <a href="index.php?l=s">S</a>
-        <a href="index.php?l=t">T</a>
-        <a href="index.php?l=u">U</a>
-        <a href="index.php?l=v">V</a>
-        <a href="index.php?l=w">W</a>
-        <a href="index.php?l=x">X</a>
-        <a href="index.php?l=y">Y</a>
-        <a href="index.php?l=z">Z</a>
+<?php
+for ($i=65;$i<=90;$i++) {
+  echo '<a href="index.php?l=' . chr($i+32) . '">' . chr($i) . '</a>';
+}
+?>
       </div>
       <div class="meal-container">
 <?php
